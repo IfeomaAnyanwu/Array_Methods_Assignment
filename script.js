@@ -86,3 +86,58 @@ console.log(myColor.toString());
 console.log(myColor.join("+").toString());
 
 //============================================================================
+//Quest 6
+//Write a function that checks if an array of integers contains only prime numbers
+
+const checkPrime = [2, 3, 5, 7];
+const checkPrime2 = [2, 3, 5, 7, 8];
+function check(array) {
+  for (z of array) {
+    if ((z == 1) | ((z > 2) & (z % 2 == 0))) return false;
+  }
+  return true;
+}
+console.log(check(checkPrime));
+console.log(check(checkPrime2));
+
+//==============================================================
+//Quest 7
+//Write javscript function to remove null, 0, "", undefined and NaN from array
+// filter () method creates a new array with every element in array that passes a test.
+//syntax: array.filter(function(currentValue, index, arr), thisValue)
+//function()	Required. A function to be run for each array element.
+//currentValue	Required.The value of the current element.
+//index	Optional.The index of the current element.
+//arr	Optional. The array of the current element.
+//thisValue	Optional.Default value undefined.A value passed to the function to be used as its this value.
+
+let array = [NaN, 0, 15, false, -22, undefined, 47, null];
+function removeFalsyValues(arr) {
+  return array.filter((truthy) => {
+    if (truthy) {
+      return truthy;
+    }
+  });
+}
+
+console.log(removeFalsyValues(array));
+//==============================================================
+//Quest 8
+//Write a javascript program that accepts a number as input and inserts dash between each even number;
+
+const num = 025468; // Explain
+console.log(num);
+const str = num.toString(); //Explain
+const result = [str[0]];
+
+for (var x = 1; x < str.length; x++) {
+  //explain why x-1
+  if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+    result.push("-", str[x]);
+  } else {
+    result.push(str[x]);
+  }
+}
+console.log(result.join(""));
+
+//===============================================================
